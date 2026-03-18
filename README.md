@@ -1,19 +1,8 @@
 <h1>🦴 AI Talking Animatronic Skull</h1>
 
 <p>
-  A repository for building and experimenting with an AI-driven animatronic skull that combines
-  hardware control, speech processing, chatbot integration, and emotion-recognition experiments.
-</p>
-
-<hr>
-
-<h2>📌 Project Status</h2>
-
-<p>
-  This repository currently looks like a <strong>project workspace / prototype repository</strong>
-  rather than a single packaged application.
-  It includes hardware sketches, Python scripts, Jupyter notebooks, 3D-printable parts,
-  research material, and supporting assets related to the animatronic skull project.
+  A multidisciplinary project combining <strong>AI, speech processing, and robotics</strong> to create
+  a physical animatronic skull capable of interacting through voice and motion.
 </p>
 
 <hr>
@@ -21,188 +10,171 @@
 <h2>🚀 Overview</h2>
 
 <p>
-  The project brings together several parts of an interactive animatronic skull system:
+  This project explores the integration of <strong>conversational AI</strong>, <strong>speech recognition</strong>,
+  and <strong>embedded hardware control</strong> into a single interactive system.
+</p>
+
+<p>
+  The system is designed to:
 </p>
 
 <ul>
-  <li>Arduino-based servo control for skull movement</li>
-  <li>Python-based serial communication with the hardware</li>
-  <li>ChatGPT / OpenAI connection experiments</li>
-  <li>Speech-to-text command recognition work</li>
-  <li>Wav2Vec2 / Transformers-based speech experiments</li>
-  <li>Emotion recognition from speech experiments</li>
-  <li>3D models and images for the skull assembly</li>
+  <li>Process spoken input</li>
+  <li>Generate intelligent responses using AI</li>
+  <li>Convert responses into audio output</li>
+  <li>Drive physical motion (jaw / facial components) in sync with speech</li>
 </ul>
 
 <p>
-  Instead of one final end-to-end application, the repository documents the different building blocks
-  used while developing the system.
+  The repository represents the development of a full pipeline — from signal processing and machine learning
+  to real-world actuation through hardware.
 </p>
 
 <hr>
 
-<h2>🧩 What’s Inside</h2>
+<h2>🧠 Core Capabilities</h2>
 
-<h3>Arduino Control</h3>
-<p>
-  The <code>arduino/</code> folder contains Arduino sketches for testing and driving servo movement,
-  including direct servo angle control and “speak” style repetitive jaw motion.
-</p>
-
-<h3>Python Hardware Interface</h3>
-<p>
-  The root-level <code>arduino.py</code> script demonstrates Python-to-Arduino serial communication
-  for sending servo angles over a serial port.
-</p>
-
-<h3>ChatGPT / OpenAI Integration</h3>
-<p>
-  The <code>chatGPT/</code> folder contains Python scripts that experiment with sending prompts to OpenAI
-  and printing generated responses.
-</p>
-
-<h3>Speech Recognition</h3>
-<p>
-  The <code>speache2text/</code> folder contains a trained model file, sample WAV files,
-  and a notebook related to speech command recognition.
-</p>
-
-<h3>Wav2Vec2 / Transformer Experiments</h3>
-<p>
-  The <code>wav2vec2Transformers/</code> folder contains notebooks, vocabulary files,
-  and additional supporting materials related to speech modeling with Hugging Face tooling.
-</p>
-
-<h3>Speech Emotion Recognition</h3>
-<p>
-  The <code>wave2vec2emotionRecognition/</code> folder contains notebooks and assets
-  for emotion recognition from speech embeddings.
-</p>
-
-<h3>3D Skull Assets</h3>
-<p>
-  The <code>skull/</code> folder contains STL files and images for the physical skull build,
-  including separate printable parts such as the jaw, face, base, neck, eye mechanism,
-  teeth, and other structural components.
-</p>
+<ul>
+  <li>AI-driven conversational response generation</li>
+  <li>Speech-to-text experimentation (custom models + datasets)</li>
+  <li>Text-to-speech integration groundwork</li>
+  <li>Servo-based mechanical motion (jaw control)</li>
+  <li>Python ↔ Arduino serial communication</li>
+  <li>Emotion recognition from speech (Wav2Vec2-based experiments)</li>
+  <li>Custom 3D-designed animatronic structure</li>
+</ul>
 
 <hr>
 
-<h2>📁 Repository Structure</h2>
+<h2>🏗️ System Concept</h2>
+
+<pre><code>User Speech
+     ↓
+Speech Processing
+     ↓
+AI Response Generation
+     ↓
+Audio Output
+     ↓
+Physical Actuation (Servo-driven jaw)
+</code></pre>
+
+<hr>
+
+<h2>🛠️ Tech Stack</h2>
+
+<h3>Software</h3>
+<ul>
+  <li>Python</li>
+  <li>Transformers (Wav2Vec2)</li>
+  <li>TensorFlow / Deep Learning models</li>
+  <li>Speech processing pipelines</li>
+  <li>OpenAI API (chat-based interaction experiments)</li>
+</ul>
+
+<h3>Hardware</h3>
+<ul>
+  <li>Arduino</li>
+  <li>Servo motors</li>
+  <li>PCA9685 servo controller (in some setups)</li>
+  <li>3D-printed mechanical structure</li>
+</ul>
+
+<hr>
+
+<h2>📁 Project Structure</h2>
 
 <pre><code>AI-Talkig-Animatronic-Skull/
-├── EMR models/
-├── SER_Transformers_WAV2VEC2/
-├── Speech Recognition LSTM Tensorflow/
-├── arduino/
-│   ├── checkServos/
-│   ├── checkServosSpeak/
-│   └── servos/
-├── chatGPT/
-│   ├── api_project.py
-│   └── openAIconnect.py
-├── papers/
-├── skull/
-│   ├── STL/
-│   └── images/
-├── speache2text/
-│   ├── SpeechRecogModel.h5
-│   ├── speach2textCommands.ipynb
-│   └── sample .wav files
-├── wav2vec2Transformers/
-├── wave2vec2emotionRecognition/
-└── arduino.py</code></pre>
+├── arduino/                         # Servo control sketches
+├── chatGPT/                         # AI interaction scripts
+├── speache2text/                    # Speech recognition models & notebooks
+├── wav2vec2Transformers/            # Transformer-based speech experiments
+├── wave2vec2emotionRecognition/     # Emotion recognition experiments
+├── skull/                           # 3D models and images
+├── papers/                          # Research references
+├── arduino.py                       # Python → Arduino communication
+└── additional ML / experiment folders
+</code></pre>
 
 <hr>
 
 <h2>🔧 Key Components</h2>
 
-<h3>1. Arduino Servo Testing</h3>
+<h3>Arduino Servo Control</h3>
 <p>
-  The Arduino sketches are used to test servo movement and speaking-style jaw motion.
-  One sketch uses a standard servo setup, while another uses a PCA9685-based controller.
+  Multiple Arduino sketches are used to test and control servo-based motion,
+  including jaw actuation patterns designed to simulate speech.
 </p>
 
-<h3>2. Python Serial Communication</h3>
+<h3>Python Hardware Interface</h3>
 <p>
-  The Python servo-control script connects to Arduino through a serial port and sends angles
-  in the 0–180 range.
+  A Python script communicates with the Arduino over a serial connection,
+  enabling dynamic control of servo angles from software.
 </p>
 
-<h3>3. OpenAI Chat Experiments</h3>
+<h3>AI Integration</h3>
 <p>
-  The chatbot scripts show early experiments for prompting OpenAI models and printing answers
-  back in the terminal.
+  The project includes early-stage integration with OpenAI models,
+  enabling prompt-based response generation for conversational interaction.
 </p>
 
-<h3>4. Speech and Emotion Recognition Research</h3>
+<h3>Speech Processing</h3>
 <p>
-  Multiple notebooks in the repository explore speech-to-text recognition, Wav2Vec2 workflows,
-  and speech emotion recognition as part of the broader animatronic interaction pipeline.
+  Several experimental pipelines are included for:
 </p>
-
-<h3>5. Physical Build Assets</h3>
-<p>
-  The skull build files suggest that the physical project includes a custom 3D-printed shell
-  and mechanical parts for jaw and facial motion.
-</p>
-
-<hr>
-
-<h2>🖨️ 3D Printable Parts</h2>
-
-<p>
-  The STL assets include printable parts such as:
-</p>
-
 <ul>
-  <li>Full skull</li>
-  <li>Left / right skull sections</li>
-  <li>Jaw</li>
-  <li>Face</li>
-  <li>Base</li>
-  <li>Neck</li>
-  <li>Teeth</li>
-  <li>Eyeballs</li>
-  <li>Eye mechanism</li>
-  <li>Top enclosure</li>
-  <li>Mounts and structural parts</li>
+  <li>Speech-to-text recognition</li>
+  <li>Custom dataset training</li>
+  <li>Transformer-based audio modeling (Wav2Vec2)</li>
+</ul>
+
+<h3>Emotion Recognition</h3>
+<p>
+  The repository explores affective computing through speech,
+  using deep learning models to classify emotional states from audio signals.
+</p>
+
+<h3>Physical System</h3>
+<p>
+  The skull is built using custom 3D-printed parts, including:
+</p>
+<ul>
+  <li>Jaw mechanism</li>
+  <li>Face and skull structure</li>
+  <li>Eye components</li>
+  <li>Base and mounting parts</li>
 </ul>
 
 <hr>
 
-<h2>⚠️ Current Limitations</h2>
-
-<ul>
-  <li>This repository does not currently provide a single polished entry point for running the full system.</li>
-  <li>There is no unified installation guide or dependency file at the repository root.</li>
-  <li>Some folders appear to be experimental, academic, or intermediate development material.</li>
-  <li>OpenAI-related scripts should be cleaned and updated before production use.</li>
-</ul>
-
-<hr>
-
-<h2>🛠️ Suggested Cleanup Before Production Use</h2>
-
-<ul>
-  <li>Remove hardcoded API keys and use environment variables instead</li>
-  <li>Add a proper <code>requirements.txt</code> or <code>pyproject.toml</code></li>
-  <li>Create a single runnable application entry point</li>
-  <li>Document the hardware wiring and bill of materials</li>
-  <li>Add photos or videos of the final skull in action</li>
-  <li>Separate research notebooks from the final deployable code</li>
-</ul>
-
-<hr>
-
-<h2>🎯 Purpose of This Repository</h2>
+<h2>🖨️ 3D Assets</h2>
 
 <p>
-  This repository documents the development of an animatronic skull project that sits at the intersection
-  of robotics, embedded systems, conversational AI, speech recognition, and affective computing.
-  It is best understood as a multi-part development repository containing both implementation assets
-  and research experiments.
+  The <code>skull/</code> directory contains STL files and visual references for building the animatronic skull,
+  including modular components for assembly and mechanical integration.
 </p>
+
+<hr>
+
+<h2>🎯 Project Scope</h2>
+
+<p>
+  This project focuses on bridging the gap between <strong>AI systems</strong> and <strong>physical interaction</strong>.
+  It serves as a foundation for building expressive robotic characters that combine perception,
+  reasoning, and motion.
+</p>
+
+<hr>
+
+<h2>🔮 Future Directions</h2>
+
+<ul>
+  <li>Real-time full pipeline integration (STT → AI → TTS → motion)</li>
+  <li>Improved lip-sync accuracy</li>
+  <li>Multi-servo facial expressions</li>
+  <li>Vision-based interaction</li>
+  <li>Edge / offline AI models</li>
+</ul>
 
 <hr>
 
